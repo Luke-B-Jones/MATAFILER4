@@ -10,8 +10,8 @@ This page is validated against the uploaded Perl source files for `MATAF4.pl`, `
 | Script | Version in uploaded source | Role |
 |---|---:|---|
 | `MATAF4.pl` | `4.38` | Main sample-level pipeline: read detection, preprocessing, host filtering, assembly, mapping, binning, SNP/SV calling and read-based profiling. |
-| `geneCat.pl` | `0.51` | Gene catalog construction and downstream gene-catalog annotation/MGS orchestration. |
-| `MGS.pl` | `0.45` | MGS/MAG dereplication, abundance/taxonomy and optional strain workflow orchestration. |
+| `geneCat.pl` | `0.55` | Gene catalog construction and downstream gene-catalog annotation/MGS orchestration. |
+| `MGS.pl` | `0.51` | MGS/MAG dereplication, abundance/taxonomy and optional strain workflow orchestration. |
 | `buildTree5.pl` | `5.38` | Phylogenetic tree construction and related MSA/population-genetic analyses. |
 
 ## How to read the tables
@@ -321,7 +321,7 @@ These may be legacy prose artefacts, GeneCat/MGS options, flags for other script
 
 ## geneCat.pl
 
-Gene-catalog construction and downstream gene-catalog annotation/MGS orchestration. The uploaded source reports version `0.51`.
+Gene-catalog construction and downstream gene-catalog annotation/MGS orchestration. The source reports version `0.55`.
 
 ### Directories/files
 
@@ -415,7 +415,7 @@ Gene-catalog construction and downstream gene-catalog annotation/MGS orchestrati
 
 ## MGS.pl
 
-MGS/MAG dereplication, abundance/taxonomy and optional strain workflow orchestration. The uploaded source reports version `0.32`.
+MGS/MAG dereplication, abundance/taxonomy and optional strain workflow orchestration. The source reports version `0.51`.
 
 ### General options
 
@@ -443,6 +443,17 @@ MGS/MAG dereplication, abundance/taxonomy and optional strain workflow orchestra
 | `-ignoreIncompleteMAGs` | integer | `1` | stable | 1: assemblies without MAG calculations are ignored. Default: 1 |
 | `-legacy` | integer | `0` | deprecated/legacy | 1: use legacy code as pre Dec `22 (clustering is a bit more muddy, reported abundances slightly different, remember to use -MGset FMG). No longer supported. Default: 0 |
 | `-genomesPerFamily` | integer | `0` | stable | See source/help for details. |
+
+The post-MGS [`meth2rep` tool](meth2rep.md) is a separate command. Its options are not accepted by `geneCat.pl` or `MGS.pl`.
+
+Its principal controls are `--mgs2rep` and `--rep2rep` (one or both required),
+`--source-min-mapq`, `--source-min-coverage`, the four named target controls
+(`--target-max-edit-rate`, `--target-min-coverage`, `--target-min-mapq`,
+`--target-min-end-clip`), technology-specific `--minimap2-preset-ont` and
+`--minimap2-preset-pb`, `--supplementary-alignments drop|keep`, and
+`--output-format bam|cram`. `--allow-missing-mn` is an explicit legacy escape
+hatch rather than a default. See the linked page for the manifest schema,
+readiness checks, output layout, defaults, and safety contract.
 
 ## buildTree5.pl
 

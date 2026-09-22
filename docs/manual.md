@@ -33,6 +33,7 @@ The current reference now covers all uploaded Perl entry points:
 - [`MATAF4.pl` flags](flag_reference.md#mataf4pl)
 - [`geneCat.pl` flags](flag_reference.md#genecatpl)
 - [`MGS.pl` flags](flag_reference.md#mgspl)
+- [meth2rep methylation-aware representative-MAG reconstruction](meth2rep.md)
 - [`buildTree5.pl` flags](flag_reference.md#buildtree5pl)
 
 ## Current vs legacy option names

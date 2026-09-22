@@ -46,6 +46,7 @@ This documentation snapshot was updated against `MATAF4.pl` version `4.38`.
 | Highly complex communities where assemblies are unlikely to be informative | [Assembly-independent profiling](docs/common_workflows.md#assembly-independent-profiling) |
 | Short-read plus ONT/PacBio support data | [Hybrid assemblies](docs/common_workflows.md#hybrid-assemblies) |
 | Mapping reads to a defined reference FASTA or database | [map2tar / map2DB / map2GC](docs/common_workflows.md#map2tar-map2db-and-map2gc-reference-mapping) |
+| Reconstructing methylation-aware representative-MAG BAM/CRAM alignments | [meth2rep](docs/meth2rep.md) |
 | You already have output and need to know what files matter | [Outputs](docs/outputs.md) |
 | You need the exact current command-line options | [Flag reference](docs/flag_reference.md) |
 
@@ -87,6 +88,7 @@ For new analyses, `-requireInput 1` prevents missing or unmatched input reads fr
 7. [Flag reference](docs/flag_reference.md) — current options parsed from `MATAF4.pl`, `geneCat.pl`, `MGS.pl` and `buildTree5.pl`.
 8. [FAQ](docs/FAQ.md) — troubleshooting and common failure modes.
 9. [Glossary](docs/glossary.md) — terms used throughout the pipeline.
+10. [meth2rep](docs/meth2rep.md) — standalone representative-MAG modBAM/modCRAM reconstruction from assembly CRAM candidates and original ONT/PB modBAMs, with exact read-sequence provenance checks.
 
 
 ## Validated flag references
