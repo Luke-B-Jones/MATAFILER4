@@ -206,8 +206,9 @@ like($executor_source,
 	'fresh representative mapping retains full SEQ on supplementary records for exact tag transfer');
 like($executor_source, qr/transfer_mod_tags\.pl/,
 	'the executor uses the first-party tag transfer');
-unlike($executor_source, qr/modkit/i,
-	'the executor never invokes modkit');
+unlike($executor_source,
+	qr/(?:find_on_path|canonical_command|tool_command|run_shell|capture_command)\s*\([^;]*['"]modkit['"]/s,
+	'the executor may describe compatibility but never resolves or invokes modkit');
 like($executor_source,
 	qr/for my \$scope_key.*?scan_scope_candidates.*?for my \$modbam \(sort keys %donor_scopes\).*?filter_bam_by_names/s,
 	'all CRAM candidate lists are compiled before one extraction pass per distinct donor modBAM');
