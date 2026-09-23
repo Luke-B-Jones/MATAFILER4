@@ -66,8 +66,8 @@ perl secScripts/MGS/meth2rep.pl \
   --mgs2rep --rep2rep \
   -o /cohort/gene_catalog/Bin_SB/Meth2Rep
 ```
+The output defaults to `<MGS dir>/Meth2Rep`; omitting `-o` does **not** place files inside the pre-existing per-MGS result directories. Both the default and a custom `-o` use the isolated `<out>/<MGS>/...` layout. `-o`/`--out` is the only output location normally needed. The report and representative directory default to locations in the table. `--binner` is inferred from a `Bin_SB`-style directory name; supply it explicitly if your directory differs. `--mgs-file` can supplement or replace the comma list, and MGS selection is always explicit. Use `--plan-only` to validate inputs, tool availability, and every technology-specific minimap2 preset, then write `.meth2rep/plan.preview.tsv` without building indexes, aligning reads, or invalidating completed units.
 
-The output defaults to `<MGS dir>/Meth2Rep`; `-o`/`--out` is the only output location normally needed. The report and representative directory default to locations in the table. `--binner` is inferred from a `Bin_SB`-style directory name; supply it explicitly if your directory differs. `--mgs-file` can supplement or replace the comma list, and MGS selection is always explicit. Use `--plan-only` to validate inputs, tool availability, and every technology-specific minimap2 preset, then write `.meth2rep/plan.preview.tsv` without building indexes, aligning reads, or invalidating completed units.
 
 | Control | Default | Effect |
 |---|---:|---|
