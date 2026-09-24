@@ -134,10 +134,10 @@ ensure_environment() {
 	local definition=$2
 	if env_exists "$name"; then
 		echo "Updating $name environment"
-		"$MAMBA_E" install --name "$name" --channel-priority flexible -q -y -f "$definition"
+		"$MAMBA_E" install --name "$name" --channel-priority flexible -y -f "$definition"
 	else
 		echo "Creating $name environment"
-		"$MAMBA_E" create --name "$name" --channel-priority flexible -q -y -f "$definition"
+		"$MAMBA_E" create --name "$name" --channel-priority flexible -y -f "$definition"
 	fi
 }
 
